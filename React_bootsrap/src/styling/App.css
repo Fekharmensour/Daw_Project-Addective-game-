@@ -1,0 +1,124 @@
+.back-wave{
+  background-color: #001C30 !important;
+  }
+.cont_quest{
+  position: relative;
+}
+
+/* this for redultat
+ */
+.cont_quest .resulta{
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.cont_quest .resulta h1{
+  margin-top: 30px;
+  font-size: 28px;
+  font-weight: bold;
+}
+.cont_quest .resulta p{
+  margin-top: 20px;
+  font-size: 40px;
+  font-weight: bold;
+
+}
+.cont_quest .resulta .btn-next{
+  position: absolute;
+  bottom: 25%;
+  right: 35%;
+  z-index: 100;
+}
+.cont_quest .resulta .btn-prev{
+  position: absolute;
+  bottom:25%;
+  left: 35%;
+  z-index: 100;
+}
+.cont_quest .resulta .btn-next span , .cont_quest .resulta .btn-prev span{
+ margin: 0 auto;
+ width: fit-content;
+ padding: 5px 25px ;
+ background: #001C30;
+ cursor: pointer;
+ border-radius: 10px;
+ color: white;
+}
+
+/* this for info questions */
+.cont_quest .wave{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 50%;
+  /* z-index: -30; */
+}
+
+.cont_quest .info{
+  text-align: center;
+}
+.cont_quest .info .Conteur{
+  margin-bottom: 10px;
+}
+.cont_quest .info .Qest{
+  margin-top: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.cont_quest .info .reponse {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.cont_quest .info .reponse ul{
+  list-style: none;
+  padding: 0;
+  z-index: 100;
+}
+
+
+.cont_quest .info .reponse ul li{
+  background: #fff;
+  padding: 10px 15px;
+  min-width:350px ;
+  box-shadow: 2px 2px 2px #a2a3a3;
+  margin: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+.cont_quest .info li .radio-ntn{
+  left: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.cont_quest .info .reponse ul li:hover{
+  background: #64ccc54a;
+}
+
+.cont_quest .info .btn-next{
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  z-index: 100;
+}
+.cont_quest .info .btn-prev{
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  z-index: 100;
+}
+.cont_quest .info .btn-next span , .cont_quest .info .btn-prev span{
+ margin: 0 auto;
+ width: fit-content;
+ padding: 5px 25px ;
+ background: #001C30;
+ cursor: pointer;
+ border-radius: 10px;
+ color: white;
+}

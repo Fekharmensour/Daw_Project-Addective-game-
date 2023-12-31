@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,400;0,700;0,800;1,1000&display=swap');
+
+:root{
+    --dark-color : #001C30;
+    --second-color :#176B87 ;
+    --therd-color :#64CCC5 ;
+    --light-color :#DAFFFB ;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sofia Sans";
+}
+
+.container_small{
+  width: 800px;
+  margin: 0 auto;
+}
+@media (min-width: 1200px) {
+  .container_small{
+    width: 900px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 950px) {
+  .container_small{
+    width: 600px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 700px) {
+  .container_small{
+    width: 100%;
+  }
+}
+
+
+body{
+    position: relative;
+    
+}
+
+.backwrap {
+    background: var(--dark-color);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -100;
+  }
+  
+  /* Shapes & Animation
+  */
+  .back-shapes {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .back-shapes img {
+    opacity: 0.2;
+    position: absolute;
+    width: 1.5%;
+  }
+  
+  .floating {
+    position: absolute;
+    animation-name: floating;
+    -webkit-animation-name: floating;
+    animation-duration: 9s;
+    -webkit-animation-duration: 9s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+  }
+  .floating.circle {
+    display: inline-block;
+    width: 39px;
+    height: 39px;
+    background-image: url("../../public/img/icon_animate/circle.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.5;
+  }
+  .floating.square {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-image: url("../../public/img/icon_animate/square.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.5;
+  }
+  .floating.triangle {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-image: url("../../public/img/icon_animate/triangle.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.5;
+  }
+  .floating.cross {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-image: url("../../public/img/icon_animate/cross.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.5;
+  }
+  
+  @keyframes floating {
+    0% {
+      transform: translateY(0%) rotate(-55deg);
+    }
+    50% {
+      transform: translateY(300%) rotate(55deg);
+    }
+    100% {
+      transform: translateY(0%) rotate(-55deg);
+    }
+  }
+  @-webkit-keyframes floating {
+    0% {
+      -webkit-transform: translateY(0%);
+    }
+    50% {
+      -webkit-transform: translateY(300%);
+    }
+    100% {
+      -webkit-transform: translateY(0%);
+    }
+  }
+
+
+.background{
+    background-color:var(--dark-color) ;
+}
+.btn{
+    padding: 3px 10px !important ;
+    background-color: var(--light-color);
+    color:  var(--dark-color);
+    border-radius: 10px !important;
+    border: none;
+    font-weight: 500 !important;
+    text-decoration: none;
+    transition: 0.5s;
+    border: 1px solid var(--light-color);
+}
+.btn:hover{
+    border: 1px solid var(--second-color);
+    background-color: transparent;
+    color: var(--second-color) !important;
+}
+
+.btn-menu svg{
+ color: var(--light-color);
+ transition: 0.3s;
+}
+.btn-menu svg:hover , .btn-menu svg:focus{
+    color: var(--second-color) ;
+}
+.btn-menu:hover{
+    border: 2px solid var(--light-color);
+}
+
+/* this is for landing page  */
+.landing {
+    
+    width: 100vw;
+    background:transparent;
+    height: calc(100vh - 50px);
+    margin-top: 49px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 0 !important;
+}
+.landing .title{
+    font-size: 50px;
+    font-family: "Sofia Sans";
+    font-weight: 700;
+    color: var(--light-color);
+}
+@media (max-width : 768px) {
+    .landing{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .image{
+        display: none !important;
+        opacity: 0;
+    }
+    .img_intro img{
+      width: 100%;
+    }
+}
+
+
+
+ /* start main heade */
+
+ .main-head{
+  text-align: center;
+ }
+ .main-head h2{
+  font-family: "Black Ops One";
+  font-size: 40px;
+  font-weight: normal;
+  position: relative;
+  text-transform: uppercase;
+  margin-bottom: 70px;
+  color: var(--therd-color);
+ }
+ .main-head h2::after{
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -45%;
+  height: 14px;
+  width: 14px;
+  background-color: var(--therd-color);
+  border: 2px solid var(--therd-color);
+  border-radius: 50%;
+  transform: translateX(-50%);
+ }
+ .main-head h2::before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -30%;
+  height: 2px;
+  width: 140px;
+  transform: translateX(-50%);
+  background-color: var(--therd-color);
+ }
+
+ /* end main heade */
+
+
+/* start Serves */
+.service-item {
+  box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+  transition: .5s;
+  background: var(--second-color);
+  max-width: 200px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 40% !important;
+}
+
+.service-item:hover {
+  background: var(--therd-color);
+}
+
+.service-item * {
+  transition: .5s;
+}
+
+.service-item:hover * {
+  color: var(--light-color) !important;
+}
+/* end Serves*/
+
+
+
+.reviews{
+  max-width: 450px;
+  margin: 0 auto;
+  
+}

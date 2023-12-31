@@ -1,0 +1,131 @@
+:root{
+    --dark-color : #001C30;
+    --second-color :#176B87 ;
+    --therd-color :#64CCC5 ;
+    --light-color :#DAFFFB ;
+}
+
+.draw_header{
+    cursor: pointer !important;
+}
+.sidebar{
+    background-color: var(--second-color) !important;
+}
+.title{
+    color: var(--light-color);
+    /* font-size: 25px; */
+}
+
+.items .item,.items .item .icon{
+    color: var(--light-color) !important;
+}
+.items .item{
+    position: relative;
+}
+.items .item::after{
+    position: absolute;
+    width: fit-content;
+    display: block;
+    opacity: 0;
+    height: 20px;
+    text-align: center;
+    content: attr(title);
+    transition: 0.5s ease;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.items .item:hover::after{
+    opacity: 0.8;
+}
+.navbar{
+    font-size: 23px;
+}
+.navbar .icons .searsh{
+    position: relative;
+}
+/* this for topbar */
+.navbar .icons .searsh input{
+    padding: 5px 20px;
+    border-radius: 5px;
+    background-color: transparent;
+    border:1px solid var(--second-color) ;
+    top: 0;
+    right: 20px;
+    width: 0px;
+    opacity: 0;
+    color: var(--dark-color);
+    transition: 0.5s ease;
+    outline: none;
+}
+.navbar .icons .searsh input:focus{
+    border:2px solid var(--therd-color);
+}
+.navbar .icons .searsh .icon{
+    position: absolute;
+    top: 60%;
+    transform: translateY(-60%);
+    right: 20px;
+    font-size: 23px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+.navbar .icons .searsh input.active{
+    width: 250px;
+    opacity: 1;
+}
+.navbar .icons .notification {
+    font-size: 23px;
+    position: relative;
+    /* margin-left: 20px; */
+}
+.navbar .icons .notification span {
+    position: absolute;
+    font-size: 10px;
+    text-align: center;
+    color: var(--light-color);
+    height: 10px;
+    width: 10px;
+    background-color: var(--second-color);
+    border-radius: 50%;
+    top: 5px;
+    right: 15px;
+
+    /* margin-left: 20px; */
+}
+.navbar .icons .notification::after{
+    display: none !important;
+}
+.navbar .icons .user .image{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--dark-color);
+    margin-right: 2px;
+}
+.navbar .icons .user .name{
+    margin-right: 2px;
+}
+.navbar .icons .user .name::after{
+    display: none !important;
+}
+
+/* this for static page  */
+.static .icon{
+    color: var(--second-color);
+}
+
+.static .active{
+    background-color: var(--second-color) !important;
+    transition: 0.4s ease ;
+}
+.static .active:hover{
+ background-color: var(--dark-color) !important;
+}
+.static .active .icon{
+    color: var(--light-color);
+}
+body{
+    background: #eeeeee45 !important;
+}
