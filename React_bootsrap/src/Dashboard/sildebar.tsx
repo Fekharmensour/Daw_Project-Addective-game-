@@ -25,8 +25,9 @@ import HomeIcon from '@mui/icons-material/Home';
 import CloseIcon from '@mui/icons-material/Close';
 import {useNavigate} from 'react-router-dom'
 import AuthContext_Dashbord from '../context/AuthContext_Dashbord';
-import { confirmAlert } from 'react-confirm-alert';
 import Swal from 'sweetalert2';
+import { FaUserMd } from "react-icons/fa";
+import { MdQuiz } from "react-icons/md";
 const drawerWidth = 240;
 
 const openedMixin = (theme: Theme): CSSObject => ({
@@ -141,7 +142,7 @@ export default function SidBar() {
         </DrawerHeader>
         <Divider />
         <List className='items '>
-          <ListItem key={'Dashbord'} disablePadding sx={{ display: 'block' }} className='item' title={open? undefined!:'Static'}  onClick={()=>{navigate('/dashbord/')}}>
+            <ListItem key={'Dashbord'} disablePadding sx={{ display: 'block' }} className='item' title={open? undefined!:'Static'}  onClick={()=>{navigate('/dashbord/')}}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -196,9 +197,29 @@ export default function SidBar() {
                     justifyContent: 'center',
                   }}
                 >
-                <MedicationIcon className='icon'/>
+                <FaUserMd  className='icon fs-4'/>
                 </ListItemIcon>
                 <ListItemText primary={'Doctor'} sx={{ opacity: open ? 1 : 0 }} />
+              </ListItemButton>
+            </ListItem>
+            <ListItem key={'Quiz'} disablePadding sx={{ display: 'block' }} className='item' title={open?undefined!:'Quiz'} onClick={()=>{navigate('/dashbord/')}}>
+              <ListItemButton
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? 'initial' : 'center',
+                  px: 2.5,
+                }}
+              >
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : 'auto',
+                    justifyContent: 'center',
+                  }}
+                >
+                <MdQuiz  className='icon fs-4'/>
+                </ListItemIcon>
+                <ListItemText primary={'Questions'} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
             <ListItem key={'Review'} disablePadding sx={{ display: 'block' }} className='item' title={open?undefined!:'Review'} onClick={()=>{navigate('/dashbord/')}}>

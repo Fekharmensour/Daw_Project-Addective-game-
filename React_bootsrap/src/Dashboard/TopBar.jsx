@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import MeetingRoomIcon from '@mui/icons-material/MeetingRoom';
 import AuthContext_Dashbord from "../context/AuthContext_Dashbord";
 import Swal from "sweetalert2";
+import logo from './img/logo1.png'
 
 const TopBar = () => {
   const [active_search , setActive_serach] = useState(false)
@@ -34,7 +35,7 @@ const TopBar = () => {
       <nav class="navbar p-0">
         <div class="container-fluid">
           <div className=" d-flex ">
-            <img src='./img/logo1.png' width={30} className="me-2" />
+            <img src={logo} width={30} className="me-2" />
             <div className="d-none d-sm-block">SnapOut</div>
           </div>
           <div className="icons d-flex align-items-center">

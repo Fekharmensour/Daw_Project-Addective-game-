@@ -1,0 +1,72 @@
+:root{
+    --dark-color : #001C30;
+    --second-color :#176B87 ;
+    --therd-color :#64CCC5 ;
+    --light-color :#DAFFFB ;
+}
+
+.btnss span{
+    padding: 5px 15px;
+    border: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: 0.5s;
+    border-radius: 10px;
+    font-weight: 500;
+}
+.btnss .btn-info{
+    background-color: var(--therd-color);
+    color: var(--light-color);
+}
+.btnss .btn-info:hover{
+    background-color: transparent;
+    border-color: var(--therd-color);
+    color: var(--therd-color);
+}
+.btnss .btn-delete{
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+.btnss .btn-delete:hover{
+    background-color: transparent;
+    border-color: var(--dark-color);
+    color: var(--dark-color);
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px !important;
+    box-shadow: 5px 5px 2px #eee;
+    border: none !important;
+}
+.card img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    /* background-size: cover; */
+
+}
+.card .card-body{
+    text-align: center;
+}
+.card .card-body .card-title{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.new_doctors{
+    background-color: var(--dark-color) !important;
+    padding: 0px;
+    border: 2px solid transparent !important;
+    transition: 0.5s;
+    width: fit-content !important;
+    height: fit-content !important;
+}
+.new_doctors:hover{
+    background-color: transparent !important;
+    color: var(--dark-color) !important;
+    border-color:var(--dark-color) !important ;
+}

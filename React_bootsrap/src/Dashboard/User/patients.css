@@ -1,0 +1,46 @@
+:root{
+    --dark-color : #001C30;
+    --second-color :#176B87 ;
+    --therd-color :#64CCC5 ;
+    --light-color :#DAFFFB ;
+}
+
+.new_patents{
+    background-color: var(--dark-color) !important;
+    padding: 5px 15px;
+    border: 2px solid transparent !important;
+    transition: 0.5s;
+}
+.new_patents:hover{
+    background-color: transparent !important;
+    color: var(--dark-color) !important;
+    border-color:var(--dark-color) !important ;
+}
+.btns{
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 10px;
+    font-weight: 500;
+    background-color: #fff !important;
+}
+.btns .btn-del{
+    color: var(--dark-color) !important  ;
+    border: 2px solid var(--dark-color)!important ;
+    background-color: transparent !important;
+}
+.btns .btn-del:hover{
+    color: #fff!important ;
+    border-color:var(--dark-color) !important ;
+    background-color: var(--dark-color)!important ;
+}
+.btns .btn-info{
+    color: var(--second-color)!important ;
+    border: 2px solid var(--second-color)!important ;
+    background-color: transparent !important;
+}
+.btns .btn-info:hover{
+    color: #fff !important; 
+    border: none !important;
+    background-color: var(--second-color) !important;
+}

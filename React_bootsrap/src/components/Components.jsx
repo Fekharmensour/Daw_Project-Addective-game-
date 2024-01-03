@@ -1,10 +1,17 @@
 import styled from 'styled-components';
 
+const root = {
+  dark_color : '#001C30',
+  second_color :'#176B87' ,
+  therd_color :'#64CCC5' ,
+  light_color :'#DAFFFB' ,
+}
+
 
 export const Body = styled.body`
-// background: -webkit-linear-gradient(to right buttom  , #164863 , #176B87);
-// background: linear-gradient(to right  , #164863 , #176B87);
- background: #001c309d;
+// background: -webkit-linear-gradient(to right buttom  , #164863 , ${root.second_color});
+// background: linear-gradient(to right  , #164863 , ${root.second_color});
+ background: #001C30ec !important;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -126,13 +133,14 @@ justify-content: space-around;
     border-radius: 20px;
     cursor: pointer;
     border: 1px solid #164863 ;
-    background-color: #001C30;
+    background-color: ${root.therd_color};
     color: #ffffff;
     font-size: 12px;
     font-weight: bold;
     padding: 12px 45px;
     margin-top:10px;
     letter-spacing: 1px;
+    border:none;
     text-transform: uppercase;
     transition: transform 80ms ease-in;
     &:active{
@@ -143,17 +151,17 @@ justify-content: space-around;
     }
  `;
  export const GhostButton = styled(Button)`
- background-color: #DAFFFB  ;
- border-color: #DAFFFB;
+ background-color: ${root.light_color}  ;
+ border-color: ${root.light_color};
  border-width: 2px;
- color:#001C30;
+ color: ${root.dark_color};
  transition: 0.5s;
  cursor: pointer;
  margin-bottom: 5px ;
  &:hover{
-  border: 2px solid #DAFFFB;
+  border: 2px solid ${root.light_color};
   background-color: transparent;
-  color: #DAFFFB !important;
+  color: ${root.light_color} !important;
  }
  `;
  
@@ -178,8 +186,8 @@ ${props =>
 
 export const Overlay = styled.div`
 background: #ff416c;
-background: -webkit-linear-gradient(to right buttom  , #176B87 , #001C30);
-background: linear-gradient(to right  , #176B87 , #001C30);
+background: -webkit-linear-gradient(to right buttom  , ${root.second_color} , ${root.therd_color});
+background: linear-gradient(to right  , ${root.second_color} , ${root.therd_color});
 background-repeat: no-repeat;
 background-size: cover;
 background-position: 0 0;
