@@ -1,42 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import * as Components from './Components';
 import './../styling/sign.css';
 import { BiSolidError } from 'react-icons/bi' ;
-import axios from "axios";
-import Cookies from 'js-cookie';
-import { ToastContainer, toast } from 'react-toastify';
+import AuthContext_Main from "../context/AuthContext_Main";
 
 const Sign =() => {
-    const Succes_msg = () => toast.success(' your login seccesfuly !', {
-        position: "top-center",
-        autoClose: 28000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        });
-     const Error_msg = () => toast.error(' your login has error !', {
-            position: "top-center",
-            autoClose: 28000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-    });
+    const {LogIn_main} = useContext(AuthContext_Main)
+    
     const expirationDate = new Date();
-    expirationDate.setDate(expirationDate.getDate() + 7);  
+    expirationDate.setDate(expirationDate.getDate() + 7); 
+
     const [signIn, toggle] =useState(true);
-    const [email , setemail] = useState("")
     const [name , setname] = useState("")
     const [pass , setPass] = useState("")
     const [Accept , SetAccept] = useState(false)
     const [user_error  , Set_Error ] = useState(""); 
-    const [user_id , setUser_id] = useState("")
-    let [ilys , setilyes] = useState("")
+
   
 
     function affiche_error() {
@@ -72,33 +51,34 @@ const Sign =() => {
               flag=false ;
           }else flag=true;
           if(flag){
-             let res =await axios
-             .post('http://192.168.43.12:8000/signin/', {
-                  username : name ,
-                  password: pass 
-              })
-             .then(respons => {
-              // Handle a successful response here
-              console.log(respons.data);
-              if(respons.status === 201 ){
-                // window.location.pathname="/";
-                console.log(respons.data.sessionid);
+            LogIn_main(name , pass)
+            //  let res =await axios
+            //  .post('http://192.168.43.12:8000/signin/', {
+            //       username : name ,
+            //       password: pass 
+            //   })
+            //  .then(respons => {
+            //   // Handle a successful response here
+            //   console.log(respons.data);
+            //   if(respons.status === 201 ){
+            //     // window.location.pathname="/";
+            //     console.log(respons.data.sessionid);
                 
-                Cookies.set('username', name , { expires: expirationDate } );
-                Cookies.set('sessionid', respons.data.sessionid, { expires: expirationDate } );
-                window.location.pathname=`/next-re/`; 
-              }
-             })
-            .catch(error => {
-              Set_Error(error.response.status)
-              if (error.response.status === 400) {
-              // Handle 422 validation errors
-              console.log('Validation Errors:', error.response.data);
-              } else {
-               // Handle other errors
-               console.error('Request failed with status code', error.response.status);
-             }
-            });
+            //     Cookies.set('username', name , { expires: expirationDate } );
+            //     Cookies.set('sessionid', respons.data.sessionid, { expires: expirationDate } );
+            //     window.location.pathname=`/next-re/`; 
+            //   }
+            //  })
+            // .catch(error => {
+            //   Set_Error(error.response.status)
+            //   if (error.response.status === 400) {
+            //   // Handle 422 validation errors
+            //   console.log('Validation Errors:', error.response.data);
+            //   } else {
+            //    // Handle other errors
+            //    console.error('Request failed with status code', error.response.status);
+            //  }
+            // });
     
           }
       }

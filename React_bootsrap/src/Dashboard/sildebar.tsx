@@ -107,16 +107,14 @@ export default function SidBar() {
     setOpen(false);
   };
 
-  const log_out = ()=>{
-    console.log("hi .....");
-    
+  const log_out = ()=>{ 
     Swal.fire({
       title: "Are you sure?",
       text: "You want to Exit The Dashbord Interface?",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
+      confirmButtonColor: "#001C30",
+      cancelButtonColor: "#64CCC5",
       confirmButtonText: "Exit it"
     }).then((result) => {
       if (result.isConfirmed) {

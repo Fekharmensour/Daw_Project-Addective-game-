@@ -77,7 +77,7 @@ const Patient = () => {
                 <Form.Control
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder='Search contacts'
-                  className='p-2 fs-5'
+                  className='p-2 px-4 fs-5 rounded-2 '
                 />
               </InputGroup>
             </Form>

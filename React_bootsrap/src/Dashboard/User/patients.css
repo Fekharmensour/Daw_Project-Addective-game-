@@ -4,6 +4,21 @@
     --therd-color :#64CCC5 ;
     --light-color :#DAFFFB ;
 }
+.back-sign{
+    background-image: url(../img/backg.jpg);
+    background-size: cover;
+    position: relative;
+}
+.back-sign::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #001c3048;
+    width: 100%;
+    height: 100%;
+}
+
 
 .new_patents{
     background-color: var(--dark-color) !important;
