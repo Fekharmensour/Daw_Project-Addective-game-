@@ -9,7 +9,12 @@ In the project directory, you can run:
 ### If you downloaded the directry react_bootsrap as is, you should...
  - run this command on terminal on this folder:
           ###  ~\react_project\React_bootsrap> npm install react-scripts --save
-
+### you must be first 
+ - install postgrSql 
+ - set code 4545
+ - create new bd name "test"
+ - run server 'back-end'
+ - admin user name 'admin' password 'admin'
 ### you must be install all this packges :
 - add package yarn
 - react-bootsrap
