@@ -34,7 +34,7 @@ const Doctor_Form = (props) => {
     <Modal show={props.show} onHide={props.handleClose} className="px-5">
       <Modal.Header closeButton>
         <Modal.Title>
-          {props.user ? `Edit User ${data.username}`: "Create New User"}
+          {props.user ? `Edit User ${data.username}`: "Create New Doctor"}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>

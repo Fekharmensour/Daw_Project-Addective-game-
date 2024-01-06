@@ -19,7 +19,23 @@ const Patient = () => {
   const [search, setSearch] = useState('');
   const [showUserForm, setShowUserForm] = useState(false);
   const [selectedUser, setSelectedUser] = useState('');
-  let User;
+  const [filteredData, setFilteredData] = useState([]);
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const resolvedData = await data;
+        const filteredData = resolvedData.filter((e) => !e.is_staff);
+        setFilteredData(filteredData.sort((a, b) =>
+          a.username.localeCompare(b.username)
+        ));
+      } catch (error) {
+        console.error('Error fetching and filtering user data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleShowUserForm = (user) => {
    setSelectedUser(user)
@@ -88,12 +104,13 @@ const Patient = () => {
                   <th className=''>Photo</th>
                   <th>Username</th>
                   <th>Email</th>
+                  <th>Is_Addective</th>
                   <th>Is_Active</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody className='text-center'>
-                {data
+                {filteredData
                   .filter((item) => {
                     return search.toLowerCase() === ''
                       ? item
@@ -105,7 +122,8 @@ const Patient = () => {
                       <td className=''><FaUserCircle className='fs-3 text-center'/></td>
                       <td>{item.username}</td>
                       <td>{item.email}</td>
-                      <td>{item.is_active} </td>
+                      <td>Addecte</td>
+                      <td>{item.is_active ? 'active' : 'unactive'} </td>
                       <td className='d-flex justify-content-around btns rounded-0'>
                         <Button
                           className='btn-del'

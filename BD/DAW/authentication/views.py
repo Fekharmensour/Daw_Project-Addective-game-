@@ -49,13 +49,15 @@ class signout(APIView):
         return Response(status=status.HTTP_200_OK)
 
 
-class userinfo(APIView):
+class userList(APIView):
     def get(self, request):
-        if request.session:
-            user = UserSerializer(request.user)
-            return Response({'user': user.data}, status=status.HTTP_200_OK)
-
-        return Response(status=status.HTTP_404_NOT_FOUND)
+        users = User.objects.all()
+        users = UserSerializer(users, many=True).data
+        return Response({'users': users}, status=status.HTTP_200_OK)
 
 
-
+class userDetail(APIView):
+    def get(self, request, pk):
+        user = User.objects.get(pk=pk)
+        user = UserSerializer(user).data
+        return Response({'user': user}, status=status.HTTP_200_OK)

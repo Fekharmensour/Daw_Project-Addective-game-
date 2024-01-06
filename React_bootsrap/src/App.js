@@ -2,11 +2,11 @@ import {Route , Routes  } from "react-router-dom"
 import Home from "./home";
 import Register from "./components/register";
 import Next_Re from "./components/next_re";
-import  Quiz  from "./components/Quiz";
 import  Questions  from "./Questions/Questions";
 import Dashboard from "./Dashboard";
 import Patient from "./Dashboard/pages/Patient";
 import Doctor from "./Dashboard/pages/Doctor";
+import Quiz from "./Dashboard/pages/Quiz";
 import Static from "./Dashboard/pages/static";
 import 'react-bootstrap/dist/react-bootstrap'
 import SignIn from "./Dashboard/SignIn";
@@ -45,6 +45,7 @@ function App() {
             <Route path='dashbord'  element={<Dashboard/>}>
               <Route path='patient' element={<Patient/>}/>
               <Route path='doctor' element={<Doctor/>}/>
+              <Route path='question' element={<Quiz/>}/>
               <Route path='' element={<Static/>}/>
             </Route>
           </Route>

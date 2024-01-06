@@ -22,7 +22,7 @@ export const QuizData = [
 ];
 
 
-export const Quiz = [
+export const Quizs = [
 
     {
         index: 1,
@@ -234,3 +234,28 @@ export const Quiz = [
         Option: ['Low', 'Moderate', 'High', 'Very High']
     }
 ];
+
+
+const groupArrayByCategory = (inputArray) => {
+    return inputArray.reduce((result, item) => {
+      const category = item.Category;
+  
+      // Find the index of the existing array with the same category
+      const categoryIndex = result.findIndex(arr => arr[0] && arr[0].category === category);
+  
+      // If the category doesn't exist in the result array, create a new array with the category
+      if (categoryIndex === -1) {
+        result.push([{ ...item, category }]);
+      } else {
+        // If the category already exists, push the current item to the existing array
+        result[categoryIndex].push({ ...item, category });
+      }
+  
+      return result;
+    }, []);
+  };
+  
+  // Example: Group array by category
+  export const groupedByCategory = groupArrayByCategory(Quizs);
+  
+  

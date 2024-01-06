@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import TopBar from "../TopBar";
 import "../Doctor/doctor.css";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { Data_Doctors } from "../Doctor/data_doctor";
+// import {data} from '../User/Data_user'
 import "../User/patients.css";
 import { FaUserPlus } from "react-icons/fa";
 import Table from "react-bootstrap/Table";
@@ -51,6 +52,24 @@ const Doctor = () => {
   const [search, setSearch] = useState("");
   const [showUserForm, setShowUserForm] = useState(false);
   const [selectedUser, setSelectedUser] = useState('');
+  // const [Data_Doctors , setData_Doctors] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const resolvedData = await data;
+  //       const filteredData = resolvedData.filter((e) => e.is_staff);
+  //       setData_Doctors(filteredData.sort((a, b) =>
+  //         a.username.localeCompare(b.username)
+  //       ));
+  //       console.log(Data_Doctors);
+  //     } catch (error) {
+  //       console.error('Error fetching and filtering user data:', error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
 
   
   const handleShowUserForm = (doctor) => {
@@ -92,12 +111,13 @@ const Doctor = () => {
               placeholder="Search contacts"
             />
           </InputGroup>
-          <Button className="d-flex align-items-center new_doctors p-3 rounded-2 ms-2">
+          <Button className="d-flex align-items-center new_doctors p-3 rounded-2 ms-2" onClick={()=> handleShowUserForm(null)}>
             <FaUserPlus className="fs-4" />
           </Button>
         </Form>
         <div className="row gap-4 d-flex justify-content-center">
-          {Data_Doctors.filter((item) => {
+          {Data_Doctors.
+          filter((item) => {
             return search.toLowerCase() === ""
               ? item
               : item.username.toLowerCase().includes(search);

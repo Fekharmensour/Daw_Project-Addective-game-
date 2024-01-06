@@ -4,7 +4,7 @@ import "./../styling/App.css";
 import { RxTriangleDown  } from "react-icons/rx";
 import { MdRadioButtonUnchecked } from "react-icons/md";
 import { RiRadioButtonFill } from "react-icons/ri";
-import {Quiz} from '../Data/QuizData'
+import {Quizs} from '../Data/QuizData'
 
 const Questions = () => {
     const [ check , setcheck] = useState(1);
@@ -15,7 +15,7 @@ const Questions = () => {
 
     const changeQuestion_tonext = () => {
         setScore(score + check*0.25);
-        if (currentQuestion + 1 < Quiz.length ) {
+        if (currentQuestion + 1 < Quizs.length ) {
         setCurrentQuestion(currentQuestion+1);
         }else{
           setShowResult(true);
@@ -59,14 +59,14 @@ const Questions = () => {
                 </div>
               </div> : 
               <div className="info">
-                <div className="Conteur" > {currentQuestion + 1} Of {Quiz.length} </div>
-                <div className="category" > Category : {Quiz[currentQuestion].Category} </div>
+                <div className="Conteur" > {currentQuestion + 1} Of {Quizs.length} </div>
+                <div className="category" > Category : {Quizs[currentQuestion].Category} </div>
                 <div className="Qest" > 
-                    {Quiz[currentQuestion].Question}
+                    {Quizs[currentQuestion].Question}
                 </div>
                 <div className="reponse">
                     <ul>
-                        {Quiz[currentQuestion].Option.map((e,i)=>{
+                        {Quizs[currentQuestion].Option.map((e,i)=>{
                             return(
                                 <li onClick={()=>setcheck(i + 1)}> { check == i + 1?<RiRadioButtonFill className="radio-ntn"/> : <MdRadioButtonUnchecked className="radio-ntn"/>} {e} </li>
                             )

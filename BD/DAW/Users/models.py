@@ -33,6 +33,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     email = models.EmailField(null=True, unique=True)
     password = models.CharField(max_length=255)
+    banned = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'username'
 
